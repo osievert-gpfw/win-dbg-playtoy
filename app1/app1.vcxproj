@@ -57,8 +57,9 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\a_static\Debug;$(OutDir)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>c_shared.lib;a_static.lib;b_shared.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -80,6 +81,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\a_static\a_static.vcxproj">
+      <Project>{63b669e3-c0e4-4030-9970-90288acd81fd}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\b_shared\b_shared.vcxproj">
+      <Project>{c1f5ff50-3ab5-481d-8a74-d882742ba9fb}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\c_shared\c_shared.vcxproj">
+      <Project>{6b6ef55c-1719-491f-b491-a2a12f425173}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
